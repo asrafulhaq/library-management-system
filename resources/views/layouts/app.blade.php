@@ -15,6 +15,9 @@
 		
 		<!-- Fontawesome CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
+
+		<!-- Datatables CSS -->
+		<link rel="stylesheet" href="{{ asset('assets/plugins/datatables/datatables.min.css') }}">
 		
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href="{{ asset('assets/css/feathericon.min.css') }}">
@@ -53,6 +56,10 @@
 		<!-- Bootstrap Core JS -->
         <script src="{{ asset('assets/js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+
+		<!-- Datatables JS -->
+		<script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+		<script src="{{ asset('assets/plugins/datatables/datatables.min.js') }}"></script>
 		
 		<!-- Slimscroll JS -->
         <script src="{{ asset('assets/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>

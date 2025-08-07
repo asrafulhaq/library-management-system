@@ -7,7 +7,7 @@
 								<span>Main</span>
 							</li>
 							<li class="active"> 
-								<a href="index.html"><i class="fe fe-home"></i> <span>Dashboard</span></a>
+								<a href="{{ url('/') }}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
 							</li>
 					
 							<li> 
@@ -20,8 +20,8 @@
 							<li class="submenu">
 								<a href="#"><i class="fe fe-layout"></i> <span> Students </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="form-basic-inputs.html">All Students</a></li>
-									<li><a href="form-input-groups.html">Add new Student </a></li>
+									<li><a href="{{ route('student.index') }}">All Students</a></li>
+									<li><a href="{{ route('student.create') }}">Add new Student </a></li>
 
 								</ul>
 							</li>
@@ -29,8 +29,8 @@
                             <li class="submenu">
 								<a href="#"><i class="fe fe-layout"></i> <span> Books </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
-									<li><a href="form-basic-inputs.html">All Books</a></li>
-									<li><a href="form-input-groups.html">Add new Book </a></li>
+									<li><a href="{{ route('books.index') }}">All Books</a></li>
+									<li><a href="{{ route('books.create') }}">Add new Book </a></li>
 
 								</ul>
 							</li>
