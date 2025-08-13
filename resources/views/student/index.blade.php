@@ -28,10 +28,11 @@
 											<thead>
 												<tr>
 													<th>#</th>
+													<th>Photo</th>
 													<th>Name</th>
 													<th>email</th>
 													<th>phone</th>
-													<th>Photo</th>
+				
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -41,10 +42,11 @@
 												@foreach ($students as $item)
 													<tr>
 														<td>{{ $loop -> iteration }}</td>
+														<td><img style="width:60px;height:60px;border-radius:5px;object-fit:cover;" src="{{ URL::to('media/students/' . $item -> photo) }}" alt=""></td>
 														<td>{{ $item -> name }}</td>
 														<td>{{ $item -> email }}</td>
 														<td>{{ $item -> phone }}</td>
-														<td></td>
+													
 														<td>
 															<a class="btn btn-sm btn-info" href=""><i class="fa fa-eye"></i></a>
 															<a class="btn btn-sm btn-warning" href=""><i class="fa fa-edit"></i></a>

@@ -22,6 +22,13 @@
 							@include('layouts.components.message')
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-10">
+							<a class="btn btn-primary" href="{{ route('student.index') }}">Back</a>
+						</div>
+					</div>
+					<br>
+					<br>
                     <div class="row">
 						<div class="col-xl-10 d-flex">
 

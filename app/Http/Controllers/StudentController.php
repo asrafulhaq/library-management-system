@@ -39,13 +39,17 @@ class StudentController extends Controller
             "phone"     => "required|starts_with:013,014,015,016,017,018,019",
         ]);
 
+        // upload student photo
+        $studentName = $this -> fileUpload($request->file("photo"), "media/students/");
+
         // data save to DB
         DB::table('students') -> insert([
-            "name"      => $request -> name,
-            "email"      => $request -> email,
-            "phone"      => $request -> phone,
-            "student_id"      => $request -> sid,
-            "address"       => $request -> address
+            "name"              => $request -> name,
+            "email"             => $request -> email,
+            "phone"             => $request -> phone,
+            "student_id"        => $request -> sid,
+            "address"           => $request -> address,
+            "photo"             => $studentName,
         ]);
 
         // return back 
@@ -59,7 +63,7 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        //
+        return $this -> uniqueFileName();
     }
 
     /**

@@ -8,13 +8,13 @@
 					<div class="page-header">
 						<div class="row">
 							<div class="col-sm-12">
-								<h3 class="page-title">All Books</h3>
+								<h3 class="page-title">All Borrowing</h3>
 								
 							</div>
 						</div>
 					</div>
 					<!-- /Page Header -->
-					<a class="btn btn-primary" href="{{ route('books.create') }}">Add new Book</a>
+					<a class="btn btn-primary" href="{{ route('borrow.search') }}">Add a new Borrow</a>
 					<br>
 					<br>
 					<div class="row">
@@ -39,22 +39,7 @@
 											</thead>
 											<tbody>
 
-												@foreach ($books as $item)
-													<tr>
-														<td>{{ $loop -> iteration; }}</td>
-														<td><img style="height:100px;" src="{{ URL::to('media/books/' . $item -> cover) }}" alt="{{ $item -> title  }}"></td>
-														<td>{{ $item -> title }}</td>
-														<td>{{ $item -> author }}</td>
-														<td>{{ $item -> copy }}</td>
-														<td>{{ $item -> isbn }}</td>
-														<td>{{ $item -> created_at }}</td>
-														<td>
-															<a class="btn btn-sm btn-info" href=""><i class="fa fa-eye"></i></a>
-															<a class="btn btn-sm btn-warning" href=""><i class="fa fa-edit"></i></a>
-															<a class="btn btn-sm btn-danger" href=""><i class="fa fa-trash"></i></a>
-														</td>
-													</tr>
-												@endforeach
+												
 												
 												
 												

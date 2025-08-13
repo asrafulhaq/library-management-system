@@ -17,6 +17,7 @@ class BookController extends Controller
         // get all books 
         $books = DB::table('books') -> get();
 
+
         return view('book.index', [
             'books' => $books
         ]);
@@ -37,23 +38,17 @@ class BookController extends Controller
     {
         // validate 
         $request -> validate([
-            'title'     => "required",
-            'author'     => "required",
-            "cover"     => "required|mimes:png,jpg,jpeg,gif|max:1024"
+            'title'         => "required",
+            'author'        => "required",
+            "isbn"          => "required|unique:books",  
+            "cover"         => "required|mimes:png,jpg,jpeg,gif|max:1024"
         ]);
 
 
 
-        // generate a file name 
-            $image = $request -> file('cover');
-
-            $fileName =  md5(rand(100000,10000000) . '_' .time() . '_' . str_shuffle("qwertyuiopplkjhgfdsazxcvbnm")) .".". $image -> getClientOriginalExtension();
-
-            // upload file 
-            $image -> move(public_path('media/book'), $fileName);
-
-
-
+        // Upload Book Cover 
+           $fileName = $this -> fileUpload($request->file("cover"), 'media/books/');
+           
         // data store 
         DB::table('books') -> insert([
             "title"             => $request -> title,
