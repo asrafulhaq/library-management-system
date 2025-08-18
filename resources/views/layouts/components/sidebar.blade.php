@@ -17,7 +17,7 @@
                             <li> 
 								<a href="components.html"><i class="fe fe-vector"></i> <span>Reservation</span></a>
 							</li>
-							<li class="submenu ">
+							<li class="submenu">
 								<a href="#" class="{{ Request::is('student') || Request::is('student/create')  ? 'active ' : '' }}"><i class="fe fe-layout"></i> <span> Students </span> <span class="menu-arrow"></span></a>
 								<ul style="display: none;">
 									<li><a class="{{ Request::is('student') ? 'link-active' : '' }}" href="{{ route('student.index') }}">All Students</a></li>

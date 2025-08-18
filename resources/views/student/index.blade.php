@@ -32,7 +32,7 @@
 													<th>Name</th>
 													<th>email</th>
 													<th>phone</th>
-				
+													<th>Created At</th>
 													<th>Action</th>
 												</tr>
 											</thead>
@@ -46,7 +46,7 @@
 														<td>{{ $item -> name }}</td>
 														<td>{{ $item -> email }}</td>
 														<td>{{ $item -> phone }}</td>
-													
+														<td>{{  \Carbon\Carbon::parse($item -> created_at) -> diffForHumans() }}</td>
 														<td>
 															<a class="btn btn-sm btn-info" href=""><i class="fa fa-eye"></i></a>
 															<a class="btn btn-sm btn-warning" href=""><i class="fa fa-edit"></i></a>

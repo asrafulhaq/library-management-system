@@ -13,7 +13,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $students = DB::table('students') -> get();
+        $students = DB::table('students') 
+        -> orderBy('created_at', 'desc')
+        -> get();
         return view('student.index', [
             'students'  => $students
         ]);
@@ -50,6 +52,7 @@ class StudentController extends Controller
             "student_id"        => $request -> sid,
             "address"           => $request -> address,
             "photo"             => $studentName,
+            "created_at"        => now(),
         ]);
 
         // return back 

@@ -32,6 +32,7 @@
 													<th>Title</th>
 													<th>Author</th>
 													<th>Copy</th>
+													<th>Available</th>
 													<th>ISBN</th>
 													<th>CreatedAt</th>
 													<th>Action</th>
@@ -46,8 +47,9 @@
 														<td>{{ $item -> title }}</td>
 														<td>{{ $item -> author }}</td>
 														<td>{{ $item -> copy }}</td>
+														<td>{{ $item -> available_copy }}</td>
 														<td>{{ $item -> isbn }}</td>
-														<td>{{ $item -> created_at }}</td>
+														<td>{{  \Carbon\Carbon::parse($item -> created_at) -> diffForHumans() }}</td>
 														<td>
 															<a class="btn btn-sm btn-info" href=""><i class="fa fa-eye"></i></a>
 															<a class="btn btn-sm btn-warning" href=""><i class="fa fa-edit"></i></a>

@@ -26,23 +26,12 @@
 									<form action="{{ route('borrow.student') }}" method="POST">
                                         @csrf 
 										<div class="form-group row">
-											<label class="col-lg-3 col-form-label">Student ID</label>
+											<label class="col-lg-3 col-form-label">Student ID / Email / Phone</label>
 											<div class="col-lg-9">
-												<input type="text" name="id" class="form-control">
+												<input type="text" name="search" class="form-control">
 											</div>
 										</div>
-										<div class="form-group row">
-											<label class="col-lg-3 col-form-label">Email</label>
-											<div class="col-lg-9">
-												<input type="text" name="email" class="form-control" autocomplete="off">
-											</div>
-										</div>
-										<div class="form-group row">
-											<label class="col-lg-3 col-form-label">Phone</label>
-											<div class="col-lg-9">
-												<input type="text" name="phone" class="form-control">
-											</div>
-										</div>
+									
 		
 										<div class="text-right">
 											<button type="submit" class="btn btn-primary">Search</button>
@@ -65,7 +54,7 @@
 										</div>
 										<div class="card-body">
 											
-											<a class="btn btn-primary" href="#">Assign Book</a>
+											<a class="btn btn-primary" href="{{ route('borrow.assign', $item -> id ) }}">Assign Book</a>
 										</div>
 									</div>
 								</div>
